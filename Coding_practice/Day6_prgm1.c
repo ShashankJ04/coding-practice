@@ -6,10 +6,18 @@ void accept(char *s)
 }
 void print(char *s)
 {    
-    int n=strlen(s);
-    for(int i=n;i>=0;i--)
+    int n=strlen(s),i,cnt,p;
+    for(i=cnt=0;i<=n;i++)
     {
-        printf("%c",s[i]);
+        if(s[i]==' ' || s[i]=='\0')
+        {
+            for(p=i-1;p>=cnt;p--)
+            {
+                printf("%c",s[p]);
+            }
+            printf(" ");
+            cnt=i+1;
+        }
     }
 }
 int main()
